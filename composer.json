@@ -1,0 +1,35 @@
+{
+	"name" : "tomsh-hr/yii2-eruda",
+	"description" : "Mobile developer tools based on eruda",
+	"type" : "yii2-extension",
+	"keywords" : [
+		"yii2-eruda",
+		"yii2",
+		"assets",
+		"mobile",
+		"developer tools",
+		"console"
+	],
+	"homepage" : "https://github.com/tomsh-hr/yii2-eruda",
+	"license" : "MIT",
+	"authors" : [{
+			"name" : "Tomislav Sismanovic",
+			"email" : "t.sismanovic@gmx.com",
+			"homepage" : "https://github.com/tomsh-hr",
+			"role" : "Developer"
+		}
+	],
+	"support" : {
+		"issues" : "https://github.com/tomsh-hr/yii2-eruda/issues",
+		"source" : "https://github.com/tomsh-hr/yii2-eruda"
+	},
+	"require" : {
+		"yiisoft/yii2" : "*",
+		"npm-asset/eruda" : "*"
+	},
+	"autoload" : {
+		"psr-4" : {
+			"tomsh\\eruda\\" : "src/"
+		}
+	}
+}
