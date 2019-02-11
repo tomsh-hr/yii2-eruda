@@ -22,6 +22,6 @@ class ErudaAsset extends AssetBundle
      * @var array
      */
     public $js = [
-        'eruda.min.js',
+        'src/eruda.min.js',
     ];
 }
