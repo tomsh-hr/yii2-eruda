@@ -24,7 +24,7 @@
 		"source" : "https://github.com/tomsh-hr/yii2-eruda"
 	},
 	"require" : {
-		"yiisoft/yii2" : "*",
+		"yiisoft/yii2" : "*"
 	},
 	"autoload" : {
 		"psr-4" : {
