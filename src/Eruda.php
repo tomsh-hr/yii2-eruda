@@ -15,6 +15,11 @@ use yii\helpers\Json;
  */
 class Eruda extends Widget
 {
+	/**
+     * @var array
+     */
+    public $clientOptions = [];
+
     /**
      * Executes the widget.
      */
@@ -30,7 +35,16 @@ class Eruda extends Widget
     {
         $view = $this->getView();
         ErudaAsset::register($view);
-        $js = 'eruda.init();';
+        $js = $this->getClientScript();
         $view->registerJs($js, $view::POS_END);
+    }
+
+    /**
+     * @return string
+     */
+    public function getClientScript()
+    {	
+        $erudaScript = 'eruda.init(' . Json::encode($this->clientOptions) . ');';
+        return $erudaScript;
     }
 }

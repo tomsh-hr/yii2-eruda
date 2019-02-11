@@ -13,10 +13,10 @@ use yii\web\AssetBundle;
  */
 class ErudaAsset extends AssetBundle
 {
-    /**
+	/**
      * @var string
      */
-    public $sourcePath = '@npm/eruda';
+    public $sourcePath = '@vendor/tomsh-hr/yii2-eruda';
 
     /**
      * @var array
