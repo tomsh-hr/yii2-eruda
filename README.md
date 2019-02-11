@@ -31,5 +31,14 @@ Put this code in your main template:
 
 ## Configuration
 
-No configuration yet...
+To configure eruda js put options in clientOptions like this:
 ```
+<?php tomsh\eruda\Eruda::widget([
+    'clientOptions' => [
+        'container' => 'erudaElement', // ID of an element (this is not same as in eruda configuration)
+        'tool' => ['console', 'elements']
+    ]
+]); ?>
+```
+NOTE: container configuration option accepts element id and not js object like in eruda original configuration.
+For other configuration options [visit eruda documentation](https://github.com/liriliri/eruda/blob/master/doc/API.md).
