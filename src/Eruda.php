@@ -2,6 +2,7 @@
 
 namespace tomsh\eruda;
 
+use Yii;
 use yii\base\Widget;
 use yii\helpers\Html;
 use yii\helpers\Json;
@@ -21,10 +22,37 @@ class Eruda extends Widget
     public $clientOptions = [];
 
     /**
+     * @var bool
+     */
+    public $onlyByUrl = false;
+
+    /**
+     * @var string
+     */
+    public $urlGetter = 'eruda';
+
+    /**
+     * @var bool
+     */
+    public $onlyInDev = false;
+
+    /**
      * Executes the widget.
      */
     public function run()
     {
+        if($this->onlyByUrl) {
+            $request = Yii::$app->request;
+            $erudaUrl = $request->get($this->urlGetter);
+            if($erudaUrl !== 'true') {
+                return;
+            }
+        }
+
+        if($this->onlyInDev === true && !YII_ENV_DEV) {
+            return;
+        }
+
         $this->registerAssets();
     }
 
@@ -43,7 +71,7 @@ class Eruda extends Widget
      * @return string
      */
     public function getClientScript()
-    {	
+    {
         $erudaScript = 'eruda.init(' . Json::encode($this->clientOptions) . ');';
         return $erudaScript;
     }
